@@ -1,6 +1,5 @@
 #!/bin/bash
 # QUIZ MATEMÁTICO
-# Autores: Juan Camilo Ramirez Tabares & Juan Felipe Castillo Gomez
 
 source ./operators/addition.sh
 source ./operators/substraction.sh
