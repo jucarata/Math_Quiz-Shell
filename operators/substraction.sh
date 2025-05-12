@@ -1,6 +1,6 @@
 #!/bin/bash
 function substraction {
-    typeset -i num1 num2 attempts real_res res
+    typeset -i num1 num2 attempts real_res
     num1=$1
     num2=$2
 
@@ -18,6 +18,11 @@ function substraction {
     do
         echo "¿Cuánto es: $num1 - $num2 ?"
         read -p "Respuesta: " res
+
+        if ! [[ $res =~ ^[0-9]+$ ]]; then
+            echo "Eso no es un número válido. Intenta de nuevo."
+            continue
+        fi
 
         ((attempts++))
 

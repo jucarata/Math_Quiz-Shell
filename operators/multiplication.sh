@@ -1,7 +1,7 @@
 #!/bin/bash
 
 function multiplication {
-    typeset -i num1 num2 attempts real_res res
+    typeset -i num1 num2 attempts real_res
     num1=$1
     num2=$(( $2 % 10 + 1 )) 
     real_res=$((num1 * num2))
@@ -12,6 +12,11 @@ function multiplication {
     do
         echo "¿Cuánto es: $num1 x $num2 ?"
         read -p "Respuesta: " res
+
+        if ! [[ $res =~ ^[0-9]+$ ]]; then
+            echo "Eso no es un número válido. Intenta de nuevo."
+            continue
+        fi
 
         ((attempts++))
 
